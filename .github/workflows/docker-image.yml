@@ -37,8 +37,8 @@ jobs:
       env: 
         NEW_VERSION: ${{steps.version.outputs.version}}
       run: |
-        docker push drglasdou/docker-gql:$NEW_VERSION
-        docker push drglasdou/docker-gql:latest
+        docker build drglasdou/docker-gql:$NEW_VERSION .
+        docker build drglasdou/docker-gql:latest .
                 
     - name: Push Docker Image -> DockerHub
       env: 
